@@ -1,0 +1,33 @@
+<phpunit bootstrap="./bootstrap.php">
+
+  <testsuites>
+    <testsuite name="Application Test Suite">
+      <directory>./aplicacao</directory>
+    </testsuite>
+    <testsuite name="Library Test Suite">
+      <directory>./lib</directory>
+    </testsuite>
+  </testsuites>
+
+   <logging>
+    <log type="coverage-html" target="../build/coverage" />
+    <log type="coverage-clover" target="../build/logs/clover.xml" />
+    <log type="coverage-crap4j" target="../build/logs/crap4j.xml" />
+    <log type="coverage-xml" target="../build/logs/coverage" />
+    <log type="junit" target="../build/logs/junit.xml" />
+  </logging>
+
+  <filter>
+    <whitelist>
+      <directory suffix=".php">../aplicacao</directory>
+      <exclude>
+        <!-- Ignorando arquivo na cobertura de testes -->
+        <file>../aplicacao/config.ini</file>
+		<file>../aplicacao/index.php</file>
+		<file>../aplicacao/.htaccess</file>
+        <!-- Ignorando diretório na cobertura de testes -->
+        <directory>../aplicacao/lib</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+</phpunit>
