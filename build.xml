@@ -8,7 +8,7 @@
         <os family="windows" />
     </condition>
 
-    <target name="build" depends="prepare,phpunit,phpmd,compress" />
+    <target name="build" depends="prepare,phpmd,compress" />
 
     <target name="prepare" depends="clean" description="Create artifact directories">
         <mkdir dir="${basedir}/build" />
