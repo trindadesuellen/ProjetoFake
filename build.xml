@@ -20,10 +20,6 @@
         <delete dir="${basedir}/build" />
     </target>
 
-    <target name="phpunit" description="Run unit tests using PHPUnit and generates reports">
-        <exec executable="${toolsdir}phpunit${script-suffix}" dir="${basedir}/tests" failonerror="true" />
-    </target>
-
     <target name="phpmd" description="Generate pmd.xml using PHPMD">
         <exec executable="${toolsdir}phpmd${script-suffix}" failonerror="false">
             <arg path="${appsource}" />
